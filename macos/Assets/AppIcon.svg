@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#205e7b"/><stop offset="1" stop-color="#10364e"/></linearGradient>
+    <linearGradient id="top" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f5d69e"/><stop offset="1" stop-color="#d79d65"/></linearGradient>
+  </defs>
+  <rect x="62" y="62" width="900" height="900" rx="204" fill="url(#tile)"/>
+  <rect x="64" y="64" width="896" height="896" rx="202" fill="none" stroke="#fff" stroke-opacity=".2" stroke-width="4"/>
+  <!-- A work surface links the local workspace to a connected tool. -->
+  <path d="M237 536h550v89H237z" fill="url(#top)"/>
+  <path d="M270 625h64v112h-64zm420 0h64v112h-64z" fill="#d49a63"/>
+  <path d="M237 536h550" fill="none" stroke="#fff0d0" stroke-width="12" stroke-linecap="round"/>
+  <rect x="278" y="294" width="276" height="185" rx="27" fill="#eaf5f2"/>
+  <path d="M337 356l-31 30 31 30m155-60l31 30-31 30m-70-77l-30 95" fill="none" stroke="#286b82" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="684" cy="387" r="74" fill="none" stroke="#e5bd86" stroke-width="22"/>
+  <path d="M650 387h68m-34-34v68" stroke="#e5bd86" stroke-width="19" stroke-linecap="round"/>
+  <path d="M554 387h56" fill="none" stroke="#8ac6c6" stroke-width="14" stroke-linecap="round" stroke-dasharray="2 25"/>
+</svg>

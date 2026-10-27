@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Local Workbench \u2014 Selected Tabs",
+  "version": "0.2.66",
+  "minimum_chrome_version": "125",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtbCehDX/zcXKiDwTD+akip6y79yMwdUl9VlK4Dd/WXtcASCbTuWmYXOerFijxo6P5zTDWS8WslN7CqTY5+45lXze4Sa4bj8BfBqDp+WXHMbIr/ppbMSYyS9jjsL4fdIlhRIxApxHGULCCpPFuenDU1TikNHuAYZ1pgU0UZ+QlWADtvi6F2mCtGG1FmXgprhoKc4sgHfej3A98P3D4YMbWSsFEi7IFv7SrM3T2J5iQUoK7C1SvcHTncaLUXNbhR2EYvWtPis4fA/n6njhQ80f40Nyts/4A6bN7NxDHy9oPrZf7CvjcUbpIrenghOMY3YpMaGtXj+Zw/Aa/WS95wL1yQIDAQAB",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "debugger",
+    "nativeMessaging",
+    "storage",
+    "alarms"
+  ],
+  "incognito": "split",
+  "background": {
+    "service_worker": "worker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Local Workbench browser access"
+  },
+  "optional_permissions": [
+    "downloads"
+  ]
+}

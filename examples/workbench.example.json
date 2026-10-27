@@ -1,0 +1,14 @@
+{
+  "workspaces": {
+    "sandbox": {
+      "root": "work/sandbox",
+      "writable": false,
+      "executable": false
+    }
+  },
+  "state_dir": "work/state",
+  "max_artifact_bytes": 536870912,
+  "max_storage_bytes": 4294967296,
+  "max_job_output_bytes": 268435456,
+  "max_jobs": 4
+}

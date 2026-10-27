@@ -1,0 +1,52 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Browser access</title>
+<style>
+  :root { color-scheme: light dark; font: 14px/1.45 system-ui, sans-serif; }
+  body { box-sizing: border-box; width: 340px; margin: 0; padding: 20px; color: #202124; background: #fff; }
+  h1 { margin: 0 0 12px; font-size: 19px; line-height: 1.2; }
+  p { margin: 10px 0; }
+  [hidden] { display: none !important; }
+  #status { padding: 10px 12px; border-radius: 8px; background: #f1f3f4; }
+  label { display: block; margin: 12px 0; }
+  input[type="checkbox"] { accent-color: #1769c2; margin: 0 6px 0 0; }
+  button, select { font: inherit; }
+  button { width: 100%; margin-top: 8px; padding: 9px 12px; border: 1px solid #c5cbd1; border-radius: 7px; color: inherit; background: #fff; cursor: pointer; }
+  button:hover { background: #f1f3f4; }
+  button:focus-visible, select:focus-visible, summary:focus-visible, input:focus-visible { outline: 2px solid #1769c2; outline-offset: 2px; }
+  button:disabled { cursor: default; opacity: 0.55; }
+  #setup, #grant { border-color: #1769c2; color: #fff; background: #1769c2; font-weight: 600; }
+  #setup:hover, #grant:hover { background: #12549a; }
+  select { padding: 5px; border: 1px solid #c5cbd1; border-radius: 6px; }
+  small { display: block; margin: 12px 0; color: #5f6368; line-height: 1.5; }
+  details { margin-top: 16px; padding-top: 14px; border-top: 1px solid #dadce0; }
+  summary { font-weight: 600; cursor: pointer; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e8eaed; background: #202124; }
+    #status { background: #303134; }
+    button { border-color: #5f6368; background: #303134; }
+    button:hover { background: #3c4043; }
+    small { color: #bdc1c6; }
+    details { border-color: #5f6368; }
+  }
+</style>
+<h1>Local Workbench</h1><p id="setup-guidance" hidden></p><p id="status" role="status">Checking browser access…</p><small id="connection-diagnostic" hidden></small>
+<label><input type="checkbox" id="setup-control"> Allow clicks, typing, page scripts and creating tabs</label>
+<label><input type="checkbox" id="setup-network"> Allow capture of future network responses</label>
+<label><input type="checkbox" id="setup-file-upload"> Allow sending selected workspace files to sites in this browser context</label>
+<label><input type="checkbox" id="setup-file-download"> Allow Workbench to initiate incoming downloads in this browser context</label>
+<small>Incoming files can be captured only from folders already added to Workbench Folder access. Downloads started by pages use a separate route.</small>
+<small>Enable this browser context once. Workbench can then find and acquire its ordinary web tabs for a task. Private browsing requires its own setup. Access lasts until you revoke it; Chrome displays a notice when a tab is controlled. Captures may contain private information.</small>
+<button id="setup">Enable browser access</button><button data-popup-only id="revoke-setup" hidden>Revoke browser access</button>
+<button data-popup-only id="stop-target" hidden>Stop control of this tab</button><button data-popup-only id="resume-target" hidden>Allow this tab again</button>
+<details data-popup-only><summary>Temporary access to this tab</summary>
+<label>Access lasts <select id="seconds"><option value="300">5 minutes</option><option value="600">10 minutes</option><option value="900">15 minutes</option></select></label>
+<label><input type="checkbox" id="control"> Allow clicks, typing and page scripts</label>
+<label><input type="checkbox" id="network"> Capture future network responses</label>
+<small>Sharing applies to this site in this tab. Access ends when you stop sharing, leave the site or the timer expires. Chrome displays a debugging notice. Captured responses can contain private information.</small>
+<button id="grant">Share this tab</button><button id="revoke" hidden>Stop sharing</button>
+</details>
+<details><summary>Connection details</summary>
+<small>Best-effort phase entries only. These do not prove readiness, completion or the cause of a delay. Session storage is not an evidence archive.</small>
+<button id="connection-read">Read saved connection details</button>
+<pre id="connection-details" role="status" style="white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px">Reading saved connection details…</pre>
+</details>
+<script src="popup.js"></script></html>

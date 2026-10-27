@@ -1,0 +1,20 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.DS_Store
+work/
+output/
+.workbench/
+workbench.local.json
+
+
+# Local credentials and generated native binaries
+.env
+.env.*
+!.env.example
+local-mcp-c/local-mcp
+
+# Completed delivery candidates are consumed by the shared installer.
+dist/

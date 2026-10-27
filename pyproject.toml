@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "local-workbench-mcp"
+version = "0.5.0"
+description = "Lossless local file and process tools for MCP clients"
+requires-python = ">=3.11"
+dependencies = ["mcp==2.2.0", "cryptography>=46,<51", "regex==2026.9.29", "certifi>=2024", "httpcore2>=2.13,<3", "playwright==1.63.0", "Pillow==13.0.0", "pyte==0.8.2"]
+
+[project.optional-dependencies]
+test = ["pytest>=9,<10"]
+
+[project.scripts]
+local-workbench = "local_workbench.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+local_workbench = ["permissions_catalogue.json", "electron_provider/*.mjs"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
